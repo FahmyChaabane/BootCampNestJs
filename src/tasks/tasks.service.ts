@@ -53,6 +53,7 @@ export class TasksService {
     */
     const found = await this.getTaskById(id, user);
     found.status = status;
-    return await found.save();
+    await found.save();
+    return found;
   }
 }
